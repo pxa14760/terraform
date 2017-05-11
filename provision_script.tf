@@ -11,3 +11,11 @@ resource "azurerm_resource_group" "helloterraform" {
     name = "terraformtest"
     location = "West US"
 }
+
+# create a virtual network
+resource "azurerm_virtual_network" "helloerraformnetwork" {
+	name = "acctvn"
+	address_space = ["10.0.0.0/16"]
+	location = "West US"
+	resource_group_name = "${azurerm_resource_group.helloterraform.name}"
+}
