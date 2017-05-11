@@ -17,5 +17,5 @@ resource "azurerm_virtual_network" "helloterraformnetwork" {
 	name = "acctvn"
 	address_space = ["10.0.0.0/16"]
 	location = "West US"
-	resource_group_name = "azurerm_resource_group.helloterraform.terraformtest"
+	resource_group_name = "${azurerm_resource_group.helloterraform.name}"
 }
