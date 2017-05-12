@@ -19,3 +19,8 @@ resource "azurerm_virtual_network" "helloterraformnetwork" {
 	location = "West US"
 	resource_group_name = "${azurerm_resource_group.helloterraform.name}"
 }
+# create a resource group
+resource "azurerm_resource_group" "terraformupdate" {
+	name = "terraformupdate"
+	location = "East US"
+}
