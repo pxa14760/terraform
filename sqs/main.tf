@@ -20,9 +20,3 @@ resource "aws_sqs_queue" "this" {
   tags = var.tags
 }
 
-data "aws_arn" "this" {
-  count = var.create ? 1 : 0
-
-  arn = aws_sqs_queue.this[0].arn
-
-}
