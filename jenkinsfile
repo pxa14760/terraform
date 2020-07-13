@@ -48,5 +48,21 @@ pipeline {
         
       }
     }
+        stage('Approval?'){
+      steps {
+        input 'Destroy stack?'
+      }
+    }
+
+    stage('Terraform Apply') {
+      steps {
+        
+          sh """
+            terraform destroy create.tfplan
+
+            """
+        
+      }
+    }
   }
 }
