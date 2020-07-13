@@ -4,7 +4,5 @@ provider "aws" {
 
 module "sqs" {
   source      = "./sqs"
-  environment = "staging"
-  project     = "example"
-  name        = ["sample_sqs"]
+  name        = "sample_sqs"
 }
