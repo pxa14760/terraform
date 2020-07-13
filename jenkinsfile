@@ -28,7 +28,17 @@ pipeline {
     stage('Terraform Plan') {
       steps {
         
-          sh "terraform plan -input=false"
+          sh "terraform plan -out=create.tfplan"
+        
+      }
+    }
+    
+    input 'Deploy stack?'
+
+    stage('Terraform Apply') {
+      steps {
+        
+          sh "terraform plan create.tfplan"
         
       }
     }
