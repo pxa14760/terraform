@@ -26,10 +26,8 @@ pipeline {
       }
     }
     stage('Terraform Plan') {
-      steps {
-        
+      steps {        
           sh "terraform plan -out=create.tfplan"
-        
       }
     }
     stage('Approval?'){
@@ -37,31 +35,19 @@ pipeline {
         input 'Deploy stack?'
       }
     }
-
     stage('Terraform Apply') {
-      steps {
-        
-          sh """
-            terraform apply create.tfplan
-
-            """
-        
+      steps {        
+          sh "terraform apply create.tfplan"   
       }
     }
-        stage('Approval?'){
+    stage('Approval?'){
       steps {
         input 'Destroy stack?'
       }
     }
-
     stage('Terraform Apply') {
-      steps {
-        
-          sh """
-            terraform destroy create.tfplan
-
-            """
-        
+      steps {      
+          sh "terraform destroy create.tfplan"       
       }
     }
   }
