@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Terraform Init') {
       steps {
-        sh "terraform init -y"
+        sh "terraform init -force-copy -backend-=true"
       }
     }
     stage('Terraform Plan') {
