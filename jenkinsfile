@@ -1,5 +1,5 @@
 pipeline {
- /* parameters {
+/*  parameters {
     password (name: 'AWS_ACCESS_KEY_ID')
     password (name: 'AWS_SECRET_ACCESS_KEY')
   }
@@ -27,10 +27,9 @@ pipeline {
     }
     stage('Terraform Plan') {
       steps {
-        withCredentials([string(credentialsId: '091a64e9-f0cf-43b0-9ce2-4e7a6bd69118', variable: 'AWS_ACCESS_KEY_ID'), 
-                       string(credentialsId: '57cc9d42-f7c4-48f1-bf89-b492a75633f7', variable: 'AWS_SECRET_ACCESS_KEY')]){
+        
           sh "terraform plan -input=false"
-        }
+        
       }
     }
   }
