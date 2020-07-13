@@ -22,7 +22,9 @@ pipeline {
     }
     stage('Terraform Init') {
       steps {
-        sh "terraform init -backend-config=backend.tf -force-copy"
+        sh """
+        terraform init -backend-config=backend.tf -force-copy
+        """
       }
     }
     stage('Terraform Plan') {
@@ -41,10 +43,7 @@ pipeline {
     stage('Terraform Apply') {
       steps {
         
-          sh """
-            terraform apply create.tfplan
-
-            """
+          sh "terraform apply create.tfplan"
         
       }
     }
