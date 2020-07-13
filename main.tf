@@ -18,10 +18,10 @@ resource "aws_s3_bucket" "terraform_state" {
 	bucket = "terraform-up-and-running-state"
 
 	versioning {
-		enables = true
+		enabled = true
 	}
 
 	lifecycle {
-		prevent_destry = true
+		prevent_destroy = true
 	}
 }
