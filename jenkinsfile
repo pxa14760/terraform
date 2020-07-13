@@ -1,4 +1,4 @@
-pipeline {
+npipeline {
 /*  parameters {
     password (name: 'AWS_ACCESS_KEY_ID')
     password (name: 'AWS_SECRET_ACCESS_KEY')
@@ -23,7 +23,7 @@ pipeline {
     stage('Terraform Init') {
       steps {
         sh """
-        terraform init -backend-config=backend.tf -force-copy
+        terraform init -backend-config=backend.tf -reconfigure
         """
       }
     }
