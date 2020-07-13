@@ -32,8 +32,11 @@ pipeline {
         
       }
     }
-    
-    input 'Deploy stack?'
+    stage('Approval?'){
+      steps {
+        input 'Deploy stack?'
+      }
+    }
 
     stage('Terraform Apply') {
       steps {
