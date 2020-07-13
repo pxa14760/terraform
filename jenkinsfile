@@ -42,7 +42,7 @@ pipeline {
       steps {
         
           sh """
-            terraform plan "create.tfplan"
+            terraform apply create.tfplan
 
             """
         
