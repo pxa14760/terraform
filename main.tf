@@ -1,4 +1,4 @@
-/* module "sns_topic" {
+ module "sns_topic" {
   source 	  = "./sns"
   name      = "sample_sns_topic"
 }
@@ -6,7 +6,7 @@
 module "sqs" {
   source      = "./sqs"
   name        = "sample_sqs"
-} */
+} 
 		
 
 
@@ -23,7 +23,7 @@ module "sqs" {
 	}
 }*/
 		
-resource "aws_dynamodb_table" "terraform_state_lock" {
+/*resource "aws_dynamodb_table" "terraform_state_lock" {
   name           = "terraform-lock"
   read_capacity  = 5
   write_capacity = 5
@@ -32,4 +32,4 @@ attribute {
     name = "LockID"
     type = "S"
   }
-}
+}*/
